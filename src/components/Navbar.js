@@ -25,7 +25,7 @@ function Navbar() {
           <NavigationMenu.Item>
             <NavigationMenu.Link
               className="text-violet11 hover:underline text-xl block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none "
-              href="/Startup"
+              href="/startup"
             >
               Startup
             </NavigationMenu.Link>

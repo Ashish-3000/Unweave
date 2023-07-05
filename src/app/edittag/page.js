@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import * as Separator from "@radix-ui/react-separator";
 import Exploring from "../../../public/exploring.png";

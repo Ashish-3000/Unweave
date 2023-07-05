@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 //./components/Editor
 import React, { memo, useEffect, useRef } from "react";
 import EditorJS, { OutputData } from "@editorjs/editorjs";

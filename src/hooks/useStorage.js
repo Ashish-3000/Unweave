@@ -23,7 +23,7 @@ const Upload = ({ file, setUrl }) => {
         setUrl(url);
       }
     );
-  }, [file]);
+  }, [file, setUrl]);
   return <></>;
 };
 

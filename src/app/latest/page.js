@@ -1,5 +1,3 @@
-// get 10 blogs according to the timestamp in any category
-
 import { getAllBlogs } from "../../helper/blogapicalls";
 import Box from "../../components/blog/Box";
 import Link from "next/link";

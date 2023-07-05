@@ -1,4 +1,3 @@
-// import { useLocation } from "react-router-dom";
 "use client";
 
 import { getSpecficBlog } from "../../../../helper/blogapicalls";
@@ -23,7 +22,7 @@ function page({ params }) {
     getSpecficBlog(_id).then((data) => {
       setBlog(data);
     });
-  }, []);
+  }, [_id]);
   return (
     <div>
       {blog && (

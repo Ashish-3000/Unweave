@@ -1,5 +1,5 @@
-//index.tsx
 "use client";
+
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import EditorJsRenderer from "../../../../components/editor/EditorJsRenderer";
@@ -50,7 +50,7 @@ export default function page({ params }) {
     getAllTags().then((data) => {
       setTags(data);
     });
-  }, []);
+  }, [_id, params.id]);
 
   const types = ["image/png", "image/jpeg", "image/jfif", "image/jpg"];
   const changeHandler = (e) => {
@@ -189,8 +189,8 @@ export default function page({ params }) {
           </div>
         )}
         <p className="text-sm">
-          Editor is WYSIWYG. So, don't worry about the preview. The title will
-          be a bit different in size 😳. But in case you are worried click the
+          Editor is WYSIWYG. So, dont worry about the preview. The title will be
+          a bit different in size 😳. But in case you are worried click the
           preview button.
         </p>
         {/* TO DO

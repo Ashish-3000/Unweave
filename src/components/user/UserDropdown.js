@@ -14,8 +14,8 @@ function UserDropdown() {
   const onSignout = () => {
     if (typeof window !== "undefined") {
       localStorage.removeItem("jwt");
+      window.location.href = "/signin";
     }
-    window.location.href = "/signin";
   };
 
   return (

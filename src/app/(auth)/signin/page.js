@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+
 import Image from "next/image";
 import login from "../../../../public/login.png";
 import { useState } from "react";
@@ -12,14 +12,19 @@ function page() {
     error: "",
     success: false,
   });
-  const { email, password, error, success } = values;
+
+  const { email, error, success } = values;
+
   const handleChange = (name) => (e) => {
     setValues({ ...values, [name]: e.target.value });
   };
+
   const [isLoading, setLoading] = useState(false);
+
   function onSubmit(e) {
     e.preventDefault();
     setLoading(true);
+    console.log(values);
     signin(values)
       .then((data) => {
         if (data.error) {
@@ -38,6 +43,7 @@ function page() {
         console.log("Try again");
       });
   }
+
   const successMessage = () => {
     window.location.href = "/";
   };
@@ -56,7 +62,7 @@ function page() {
               Sorry you are not registered, Try Again
             </div>
           )}
-          <h1 className="font-extrabold text-2xl">Let's Go</h1>
+          <h1 className="font-extrabold text-2xl">Lets Go</h1>
           <div className="email-input mx-auto my-8">
             <label htmlFor="email" className="text-xl font-bold">
               Email
