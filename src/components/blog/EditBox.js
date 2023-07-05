@@ -30,8 +30,8 @@ function EditBox({ blog }) {
             <div className="p-2 flex gap-2 items-center">
               {blog.photo !== "" && (
                 <Image
-                  width="10"
-                  height="10"
+                  width="100"
+                  height="100"
                   className="h-20 w-20 md:h-24 md:w-24"
                   src={blog.photo}
                   alt=""

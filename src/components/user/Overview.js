@@ -17,7 +17,7 @@ function Overview({ setSelected, author, user }) {
   let github = "";
   let mysite = "";
   let linkedin = "";
-  if (user.links !== undefined) {
+  if (user.links !== undefined && user.links[0] !== undefined) {
     const links = user.links[0];
     twitter = links.twitter;
     github = links.github;
