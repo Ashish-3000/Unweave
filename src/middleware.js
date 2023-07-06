@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
+import { isAuthenticated } from "./helper/authentication";
 
 export function middleware(NextRequest) {
-  return NextResponse.redirect(new URL("/signin", NextRequest.url));
+  const token = NextRequest.cookies.get("token");
+  if (!token) return NextResponse.redirect(new URL("/signin", NextRequest.url));
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/createblog/:path*", "/edittag"],
 };

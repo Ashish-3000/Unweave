@@ -1,4 +1,5 @@
 const API = process.env.API;
+import Cookies from "js-cookie";
 
 export const signup = async (user) => {
   try {
@@ -33,9 +34,7 @@ export const signin = async (user) => {
 };
 
 export const authenticate = (data, next) => {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("jwt", JSON.stringify(data));
-  }
+  Cookies.set("token", JSON.stringify(data), { expires: 7 });
   next();
 };
 
@@ -47,14 +46,11 @@ export const signout = (data, next) => {
 };
 
 export const isAuthenticated = () => {
-  if (typeof window == "undefined") {
-    return false;
-  }
-  if (localStorage.getItem("jwt")) {
-    //to check whether this is the same user that is
-    // there in the database
-    return JSON.parse(localStorage.getItem("jwt"));
-  } else {
+  // console.log(JSON.parse(name).user);
+  try {
+    const name = Cookies.get("token");
+    return JSON.parse(name);
+  } catch (err) {
     return false;
   }
 };

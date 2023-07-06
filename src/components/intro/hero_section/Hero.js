@@ -6,8 +6,8 @@ function Hero({ blogs }) {
   return (
     <div className="side-margin">
       <div className="md:grid md:grid-cols-2 gap-2 h-96 w-full">
-        <Big_Blog blog={blogs[0]} />
-        <Small_Blog blogs={blogs} />
+        {blogs !== undefined && <Big_Blog blog={blogs[0]} />}
+        {blogs !== undefined && <Small_Blog blogs={blogs} />}
       </div>
     </div>
   );

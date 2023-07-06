@@ -17,12 +17,13 @@ const EditorBlock = dynamic(
 
 function page({ params }) {
   const _id = params.id.splice(-1).toString();
+  console.log(_id);
   const [blog, setBlog] = useState();
   useEffect(() => {
     getSpecficBlog(_id).then((data) => {
       setBlog(data);
     });
-  }, [_id]);
+  }, []);
   return (
     <div>
       {blog && (

@@ -57,7 +57,9 @@ export const deleteBlog = async (id) => {
 
 export const getAllBlogs = async () => {
   try {
-    const response = await fetch(`${API}/allblogs`, { method: "GET" });
+    const response = await fetch(`${API}/allblogs`, {
+      method: "GET",
+    });
     return await response.json();
   } catch (err) {
     console.log(err);
@@ -77,7 +79,9 @@ export const getSpecficBlog = async (id) => {
 
 export const getLatestBlogs = async () => {
   try {
-    const response = await fetch(`${API}/latestblogs`, { method: "GET" });
+    const response = await fetch(`${API}/latestblogs`, {
+      method: "GET",
+    });
     return await response.json();
   } catch (err) {
     console.log(err);
@@ -86,7 +90,9 @@ export const getLatestBlogs = async () => {
 
 export const getPopularBlogs = async () => {
   try {
-    const response = await fetch(`${API}/popularblogs`, { method: "GET" });
+    const response = await fetch(`${API}/popularblogs`, {
+      method: "GET",
+    });
     return await response.json();
   } catch (err) {
     console.log(err);

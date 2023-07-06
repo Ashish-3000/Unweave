@@ -4,8 +4,6 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import { usePathname } from "next/navigation";
 import Footer from "../components/Footer";
-import { isAuthenticated } from "../helper/authentication";
-import { useState, useEffect } from "react";
 
 const hideNavbarPages = ["/success", "/signin"];
 

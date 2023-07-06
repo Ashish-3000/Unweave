@@ -6,6 +6,7 @@ import Image from "next/image";
 import "./styles.css";
 import Link from "next/link";
 import { isAuthenticated, signout } from "../../helper/authentication";
+import Cookies from "js-cookie";
 
 function UserDropdown() {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
@@ -13,7 +14,7 @@ function UserDropdown() {
   const [person, setPerson] = React.useState("pedro");
   const onSignout = () => {
     if (typeof window !== "undefined") {
-      localStorage.removeItem("jwt");
+      Cookies.remove("token");
       window.location.href = "/signin";
     }
   };
