@@ -2,9 +2,13 @@ const API = process.env.API;
 
 export const getAllTags = async () => {
   try {
-    const response = await fetch(`${API}/alltags`, {
-      method: "GET",
-    });
+    const response = await fetch(
+      `${API}/alltags`,
+      {
+        method: "GET",
+      },
+      { cache: "no-store" }
+    );
     return await response.json();
   } catch (err) {
     console.log(err);

@@ -12,7 +12,7 @@ function Popular({ blogs }) {
               if (index < 4)
                 return (
                   <div key={index}>
-                    <Link href={"/blog" + blog.title + "/" + blog._id}>
+                    <Link href={"/blog/" + blog.title + "/" + blog._id}>
                       <div className=" text-xl">{blog.title}</div>
                     </Link>
                     <hr className="h-px my-8 mx-4 bg-gray-200 border-0 dark:bg-gray-700" />

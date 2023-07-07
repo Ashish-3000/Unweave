@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import EditorJsRenderer from "../../../../components/editor/EditorJsRenderer";
+import Balancer from "react-wrap-balancer";
 
 // important that we use dynamic loading here
 // editorjs should only be rendered on the client side.
@@ -17,7 +18,6 @@ const EditorBlock = dynamic(
 
 function page({ params }) {
   const _id = params.id.splice(-1).toString();
-  console.log(_id);
   const [blog, setBlog] = useState();
   useEffect(() => {
     getSpecficBlog(_id).then((data) => {
@@ -28,7 +28,9 @@ function page({ params }) {
     <div>
       {blog && (
         <div className="w-10/12 md:w-3/5 mx-auto mt-4">
-          <h1 className="text-center mb-4">{blog.title}</h1>
+          <h1 className="text-center mb-4">
+            <Balancer>{blog.title}</Balancer>
+          </h1>
           <Image
             src={blog.photo}
             className="h-40 md:w-full md:h-96"
