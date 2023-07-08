@@ -7,7 +7,11 @@ export const getAllTags = async () => {
       {
         method: "GET",
       },
-      { cache: "no-store" }
+       {
+        next: {
+          revalidate: 100,
+        },
+      }
     );
     return await response.json();
   } catch (err) {
