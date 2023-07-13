@@ -1,5 +1,11 @@
+import ComingSoon from "@/components/CominSoon";
+
 function page() {
-  return <div>Things are coming soon ...</div>;
+  return (
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
 }
 
 export default page;

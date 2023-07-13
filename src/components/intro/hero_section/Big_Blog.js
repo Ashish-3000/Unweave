@@ -18,7 +18,7 @@ function Big_Blog({ blog }) {
           priority
           quality={100}
         />
-        <div className="absolute bottom-0 font-bold bg-white md:w-96 m-1">
+        <div className="absolute bottom-0 font-Playfair font-bold bg-white md:w-96 m-1">
           <div className="text-black text-2xl p-4">{blog.title}</div>
         </div>
       </Link>

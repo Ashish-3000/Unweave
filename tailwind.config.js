@@ -10,7 +10,9 @@ export const content = [
 export const theme = {
   extend: {
     fontFamily: {
-      Rampart: ["Rampart One", "cursive"],
+      Permanent: ["Permanent Marker"],
+      Yuji: ["Yuji Boku"],
+      Playfair: ["Playfair Display"],
     },
     backgroundImage: {
       "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

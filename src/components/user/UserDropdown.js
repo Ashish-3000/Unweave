@@ -26,7 +26,13 @@ function UserDropdown() {
           className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-violet11 bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-violet3 focus:shadow-[0_0_0_2px] focus:shadow-black"
           aria-label="Customise options"
         >
-          <Image src={Exploring} alt="userImage" className="rounded-full" />
+          <Image
+            src={isAuthenticated() ? isAuthenticated().user.photo : Exploring}
+            alt="userImage"
+            className="rounded-full"
+            width="100"
+            height="100"
+          />
         </button>
       </DropdownMenu.Trigger>
 
@@ -37,14 +43,14 @@ function UserDropdown() {
           style={{ zIndex: "1" }}
         >
           <DropdownMenu.Item className="group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1">
-            User Name
+            {isAuthenticated()?.user?.penname}
           </DropdownMenu.Item>
           <DropdownMenu.Separator className="DropdownMenuSeparator bg-black" />
 
           <Link
             href={
               isAuthenticated()
-                ? "/author/" + isAuthenticated().user.penname
+                ? "/author/" + isAuthenticated()?.user?.penname
                 : "/signin"
             }
           >

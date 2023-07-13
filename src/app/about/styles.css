@@ -1,0 +1,5 @@
+.about-text {
+  background: linear-gradient(30deg, #c850c0, #ffcc70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

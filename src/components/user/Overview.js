@@ -30,8 +30,10 @@ function Overview({ setSelected, author, user }) {
       <div className=" px-4 pt-6 bg-white rounded-lg border border-gray-200 shadow-md flex flex-col items-center pb-10">
         <Image
           className="mb-3 w-24 h-24 rounded-full shadow-lg"
-          src={Exploring}
+          src={user?.photo ? user.photo : Exploring}
           alt="Bonnie image"
+          width="100"
+          height="100"
         />
         <p className="mb-1 text-xl font-medium text-gray-900 ">
           {user.penname}
@@ -64,23 +66,25 @@ function Overview({ setSelected, author, user }) {
         <div>
           <Separator.Root className="w-full h-[0.1rem] bg-black my-4" />
           <div
-            className=" cursor-pointer hover:bg-gray-200"
             onClick={() => {
               setSelected(0);
             }}
             style={{ display: isAuthorised(author) ? "block" : "none" }}
           >
-            {isAuthenticated() && isAuthorised(author) && <p> Edit Profile</p>}
+            {isAuthenticated() && isAuthorised(author) && (
+              <p className=" cursor-pointer hover:bg-gray-200"> Edit Profile</p>
+            )}
             <Separator.Root className="w-full h-[0.1rem] bg-black my-4" />
           </div>
           <div
-            className=" cursor-pointer hover:bg-gray-200"
             onClick={() => {
               setSelected(1);
             }}
             style={{ display: isAuthorised(author) ? "block" : "none" }}
           >
-            {isAuthenticated() && isAuthorised(author) && <p>Saved Blogs</p>}
+            {isAuthenticated() && isAuthorised(author) && (
+              <p className=" cursor-pointer hover:bg-gray-200">Saved Blogs</p>
+            )}
             <Separator.Root className="w-full h-[0.1rem] bg-black my-4" />
           </div>
           <div

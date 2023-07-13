@@ -22,7 +22,7 @@ function Small_Blog({ blogs }) {
             />
           </Link>
         </div>
-        <div className="font-bold basis-2/3">
+        <div className="font-Playfair font-bold basis-2/3">
           <div className="text-black">{blog1.title}</div>
         </div>
       </div>
@@ -43,7 +43,7 @@ function Small_Blog({ blogs }) {
             />
           </Link>
         </div>
-        <div className="font-bold basis-2/3">
+        <div className="font-Playfair font-bold basis-2/3">
           <div className="text-black">{blog2.title}</div>
         </div>
       </div>
@@ -64,7 +64,7 @@ function Small_Blog({ blogs }) {
             />
           </Link>
         </div>
-        <div className="font-bold basis-2/3">
+        <div className="font-Playfair font-bold basis-2/3">
           <div className="text-black">{blog3.title}</div>
         </div>
       </div>

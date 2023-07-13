@@ -5,7 +5,7 @@ import EditBox from "../../blog/EditBox";
 function Publishedblogs({ blogs, selected }) {
   return (
     <div>
-      My Published Blogs
+      Published Blogs
       {blogs.map((blog, key) => {
         if (blog.saved === 0)
           return (

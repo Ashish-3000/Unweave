@@ -1,7 +1,13 @@
 // get all the blogs related to gadgets
 
+import ComingSoon from "@/components/CominSoon";
+
 function page() {
-  return <div>Thins are coming soon ...</div>;
+  return (
+    <div className="h-screen">
+      <ComingSoon />
+    </div>
+  );
 }
 
 export default page;

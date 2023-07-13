@@ -6,6 +6,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import EditorJsRenderer from "../../../../components/editor/EditorJsRenderer";
 import Balancer from "react-wrap-balancer";
+import Link from "next/link";
 
 // important that we use dynamic loading here
 // editorjs should only be rendered on the client side.
@@ -40,6 +41,12 @@ function page({ params }) {
             priority
             quality={80}
           />
+          <div className="flex justify-end items-center">
+            <span className="text-orange-700 font-bold">Author:</span>
+            <h3 className="p-3">
+              <Link href={"/author/" + blog?.penname}>{blog.penname}</Link>
+            </h3>
+          </div>
           {blog.content !== undefined && (
             <EditorBlock
               data={blog.content[0]}

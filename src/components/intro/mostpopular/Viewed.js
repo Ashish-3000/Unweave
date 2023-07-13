@@ -8,7 +8,7 @@ function Viewed({ blogs }) {
       {blogs.map((blog, index) => {
         if (index >= 4 && index < 6)
           return (
-            <div key={index} className="relative  ">
+            <div key={index} className="relative overflow-hidden">
               <Link href={"/blog/" + blog.title}>
                 <Image
                   className="object-cover h-full w-full"
@@ -18,7 +18,7 @@ function Viewed({ blogs }) {
                   alt=""
                 />
                 <div className="absolute bottom-0 font-bold m-1">
-                  <div className="text-black p-4 backdrop-blur-md">
+                  <div className="font-Playfair text-black p-1 md:p-4 backdrop-blur-md">
                     {blog.title}
                   </div>
                 </div>
@@ -36,7 +36,7 @@ function Viewed({ blogs }) {
           alt=""
         />
         <div className="absolute bottom-0 font-bold m-1">
-          <div className="text-black  p-4 backdrop-blur-md">
+          <div className="font-Playfair text-black  p-4 backdrop-blur-md">
             {blogs[6].title}
           </div>
         </div>

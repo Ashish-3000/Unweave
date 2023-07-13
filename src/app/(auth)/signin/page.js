@@ -8,12 +8,15 @@ import { signin, authenticate } from "../../../helper/authentication";
 function page() {
   const [values, setValues] = useState({
     email: "",
-    password: process.env.PASSWORD,
+    password: "",
     error: "",
     success: false,
   });
 
-  const { email, error, success } = values;
+  // const [otp, setOtp] = useState(false);
+  // const [mail, setMail] = useState("");
+
+  const { email, password, error, success } = values;
 
   const handleChange = (name) => (e) => {
     setValues({ ...values, [name]: e.target.value });
@@ -51,15 +54,10 @@ function page() {
   return (
     <div className="mx-1 md:mx-0 grid h-screen md:grid-cols-2 bg-gray-100">
       <div className="tablet-centered my-auto">
-        <form
-          className="content-grid home-hero"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
+        <div className="content-grid home-hero">
           {error && (
             <div className="danger" role="alert">
-              Sorry you are not registered, Try Again
+              Sorry you are not registered or Password is wrong
             </div>
           )}
           <h1 className="font-extrabold text-2xl">Lets Go</h1>
@@ -76,6 +74,22 @@ function page() {
               onChange={handleChange("email")}
             />
           </div>
+
+          <div className="email-input mx-auto my-8">
+            <label htmlFor="password" className="text-xl font-bold">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              value={password}
+              required
+              onChange={handleChange("password")}
+            />
+          </div>
+        </div>
+        <div className="mx-auto">
           <button
             className="large-button"
             onClick={(e) => {
@@ -86,8 +100,9 @@ function page() {
               {isLoading ? "Logging in..." : "Log in"}
             </div>
           </button>
-        </form>
+        </div>
       </div>
+
       <div className="hidden md:block bg-navy border-right">
         <Image src={login} alt="login" className="object-cover w-full h-full" />
       </div>

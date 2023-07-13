@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playfair+Display&family=Yuji+Boku&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,10 +24,12 @@ body {
     --background-end-rgb: 0, 0, 0;
   }
 } */
-.codex-editor__loader { height: 38px; }
+.codex-editor__loader {
+  height: 38px;
+}
 
-body { 
-  background-color: #F1F6F0;
+body {
+  background-color: #ececed;
   /* color: rgb(var(--foreground-rgb)); */
   /* background: linear-gradient(
       to bottom,
@@ -72,7 +75,6 @@ input {
   justify-content: center;
 }
 
-
 .content-grid.home-hero {
   justify-items: center;
   text-align: center;
@@ -98,18 +100,18 @@ input {
   text-decoration: none;
 }
 
-@layer components{
-  h1{
-    @apply text-xl md:text-4xl font-bold
+@layer components {
+  h1 {
+    @apply text-xl md:text-4xl font-bold;
   }
-  h2{
-    @apply md:text-2xl
+  h2 {
+    @apply md:text-2xl;
   }
-  h3{
-    @apply text-lg
+  h3 {
+    @apply text-lg;
   }
-  .side-margin{
-    @apply  mx-1 md:mx-6 lg:mx-8 xl:mx-10
+  .side-margin {
+    @apply mx-2 md:mx-6 lg:mx-8 xl:mx-10;
   }
   .btn-primary {
     @apply py-2 px-4 font-semibold rounded-2xl bg-inherit
@@ -117,19 +119,20 @@ input {
     focus:ring-blue-400 focus:ring-opacity-75 border-2;
   }
   .btn-subscribe {
-    @apply py-2 px-2 text-white bg-yellow-200 text-black
-    shadow-md hover:bg-yellow-300 focus:outline-none focus:ring-2
-    focus:ring-blue-400 focus:ring-opacity-75 border-2 border-gray-500;
+    @apply border-2 border-b-4 text-xs md:text-xl border-r-4 border-black py-2 px-4
+     bg-[#ccf88e] text-black
+    hover:bg-[#ccf90e] font-semibold 
+      focus:outline-none focus:ring-2 
+     focus:ring-blue-400 focus:ring-opacity-75;
   }
   .menu-button {
     @apply text-3xl md:text-4xl lg:text-6xl font-bold leading-none text-violet11 
     rounded-[3px] flex items-center h-[25px] mt-12 relative px-[25px] py-[25px]
     select-none outline-none data-[disabled]:text-mauve8 
     data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9
-     data-[highlighted]:text-violet1
+     data-[highlighted]:text-violet1;
   }
   .tablet-centered {
-    @apply m-auto
+    @apply m-auto;
   }
 }
-
