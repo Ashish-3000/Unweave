@@ -3,18 +3,20 @@
 import Image from "next/image";
 import login from "../../../../public/login.png";
 import { useState } from "react";
-import { signin, authenticate, sendOtp } from "../../../helper/authentication";
+import { updatePassword, authenticate } from "../../../helper/authentication";
 import Link from "next/link";
 
 function page() {
   const [values, setValues] = useState({
     email: "",
-    password: "",
     error: "",
     success: false,
   });
 
-  const { email, password, error, success } = values;
+  // const [otp, setOtp] = useState(false);
+  // const [mail, setMail] = useState("");
+
+  const { email, error, success } = values;
 
   const handleChange = (name) => (e) => {
     setValues({ ...values, [name]: e.target.value });
@@ -25,7 +27,7 @@ function page() {
   function onSubmit(e) {
     e.preventDefault();
     setLoading(true);
-    signin(values)
+    updatePassword(values)
       .then((data) => {
         if (data.error) {
           setLoading(false);
@@ -34,7 +36,7 @@ function page() {
           authenticate(data, () => {
             setValues({
               ...values,
-              ["success"]: true,
+              ["success"]: "The reset link has been sent to your email id",
             });
           });
         }
@@ -44,20 +46,19 @@ function page() {
       });
   }
 
-  const successMessage = () => {
-    window.location.href = "/";
-  };
-
   return (
     <div
-      id="signin"
+      id="password"
       className="mx-1 md:mx-0 grid h-screen md:grid-cols-2 bg-gray-100"
     >
       <div className="tablet-centered my-auto">
         <div className="content-grid home-hero">
-          <div className="danger" role="alert">
-            {error && <span>{error}</span>}
-          </div>
+          {error && (
+            <div className="danger" role="alert">
+              Sorry email does not exist, Sign Up
+            </div>
+          )}
+          {success}
           <h1 className="font-extrabold text-2xl">Lets Go</h1>
           <div className="email-input mx-auto my-8">
             <label htmlFor="email" className="text-xl font-bold">
@@ -72,20 +73,6 @@ function page() {
               onChange={handleChange("email")}
             />
           </div>
-
-          <div className="email-input mx-auto my-8">
-            <label htmlFor="password" className="text-xl font-bold">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              value={password}
-              required
-              onChange={handleChange("password")}
-            />
-          </div>
         </div>
         <div className="w-full">
           <button
@@ -94,21 +81,14 @@ function page() {
               onSubmit(e);
             }}
           >
-            <div className="large-button-text">
-              {isLoading ? "Logging in..." : "Log in"}
-            </div>
+            <div className="large-button-text">Enter the email</div>
           </button>
-        </div>
-        <div className="text-blue-500 flex justify-between mt-4">
-          <Link href="/password/#password">Forgot Password</Link>
-          <Link href="/signup/#signup">New User</Link>
         </div>
       </div>
 
       <div className="hidden md:block bg-navy border-right">
         <Image src={login} alt="login" className="object-cover w-full h-full" />
       </div>
-      {success && successMessage()}
     </div>
   );
 }

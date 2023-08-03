@@ -22,8 +22,13 @@ function Header({ logged }) {
       </div>
       <div className="flex-1 flex justify-end">
         {loggedIn ? (
-          <div className="btn-subscribe">
-            <Link href="#subscribe">SUBSCRIBE</Link>
+          <div className="flex justify-center items-center gap-2">
+            <div className="font-semibold hidden md:inline underline decoration-2 decoration-[#788734]">
+              <Link href="/signin/#signin">SIGN IN</Link>
+            </div>
+            <div className="btn-subscribe">
+              <Link href="#subscribe">SUBSCRIBE</Link>
+            </div>
           </div>
         ) : (
           <div className="flex justify-center items-center gap-2">

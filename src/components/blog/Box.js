@@ -19,7 +19,8 @@ function Box({ blog }) {
           )}
           <div>
             <div>
-              <h2>{blog.title}</h2>
+              <h2 className="font-semibold">{blog.title}</h2>
+              <p className="text-gray-500">{blog.penname}</p>
             </div>
           </div>
         </div>

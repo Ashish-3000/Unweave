@@ -27,7 +27,7 @@ function UserDropdown() {
           aria-label="Customise options"
         >
           <Image
-            src={isAuthenticated() ? isAuthenticated().user.photo : Exploring}
+            src={isAuthenticated() ? isAuthenticated()?.user?.photo : Exploring}
             alt="userImage"
             className="rounded-full"
             width="100"
@@ -51,7 +51,7 @@ function UserDropdown() {
             href={
               isAuthenticated()
                 ? "/author/" + isAuthenticated()?.user?.penname
-                : "/signin"
+                : "/signin/#signin"
             }
           >
             <DropdownMenu.Item className="group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1">

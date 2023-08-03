@@ -28,18 +28,20 @@ function Viewed({ blogs }) {
       })}
 
       <div className="col-span-2 relative">
-        <Image
-          className="object-cover h-full w-full"
-          src={blogs[6].photo}
-          width={100}
-          height={100}
-          alt=""
-        />
-        <div className="absolute bottom-0 font-bold m-1">
-          <div className="font-Playfair text-black  p-4 backdrop-blur-md">
-            {blogs[6].title}
+        <Link href={"/blog/" + blogs[6 ].title}>
+          <Image
+            className="object-cover h-full w-full"
+            src={blogs[6].photo}
+            width={100}
+            height={100}
+            alt=""
+          />
+          <div className="absolute bottom-0 font-bold m-1">
+            <div className="font-Playfair text-black  p-4 backdrop-blur-md">
+              {blogs[6].title}
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

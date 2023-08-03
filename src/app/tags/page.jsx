@@ -4,7 +4,21 @@ import Image from "next/image";
 import Space from "../../../public/space.gif";
 
 export default async function page({}) {
-  const tags = await getAllTags();
+  const tags = await fetch(
+    `${API}/alltags`,
+    {
+      method: "GET",
+    },
+    {
+      cache: "no-store",
+    }
+  )
+    .then((data) => {
+      return data.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   return (
     <div className="min-h-screen">
@@ -18,7 +32,7 @@ export default async function page({}) {
                 className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
               >
                 <Link href={"/tags/" + tag.name}>
-                  <div className="flex text-black relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+                  <div className="text-black gap-2 flex relative p-2 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
                     {tag.photo && (
                       <Image
                         src={tag.photo}

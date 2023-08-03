@@ -4,6 +4,7 @@ import Image from "next/image";
 import login from "../../../../public/login.png";
 import { useState } from "react";
 import { signup } from "../../../helper/authentication";
+import Link from "next/link";
 
 function page() {
   const [values, setValues] = useState({
@@ -48,7 +49,10 @@ function page() {
   };
 
   return (
-    <div className="mx-1 md:mx-0 grid h-screen md:grid-cols-2 bg-gray-100">
+    <div
+      id="signup"
+      className="mx-1 md:mx-0 grid h-screen md:grid-cols-2 bg-gray-100"
+    >
       <div className="tablet-centered my-auto">
         <form
           className="content-grid home-hero"
@@ -115,14 +119,20 @@ function page() {
             />
           </div>
           <button
-            className="large-button"
+            className="large-button w-full"
             onClick={(e) => {
               onSubmit(e);
             }}
           >
-            <div className="large-button-text">SingUp</div>
+            <div className="large-button-text">Sign Up</div>
           </button>
         </form>
+        <div className="text-gray-500 flex justify-center mt-4">
+          Have an account?
+          <Link href="/signin/#signin" className="text-blue-500">
+            &nbsp; Sign In
+          </Link>
+        </div>
       </div>
       <div className="hidden md:block bg-navy border-right">
         <Image src={login} alt="login" className="object-cover w-full h-full" />

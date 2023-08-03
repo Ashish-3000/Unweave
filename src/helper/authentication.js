@@ -22,7 +22,7 @@ export const signin = async (user) => {
     const res = await fetch(`${API}/signin`, {
       method: "POST",
       headers: {
-        Accept: "appliaction/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
@@ -32,6 +32,71 @@ export const signin = async (user) => {
     console.log(err);
   }
 };
+
+export const verify = async (user) => {
+  try {
+    const res = await fetch(`${API}/verify/${user.id}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updatePassword = async (user) => {
+  console.log(user);
+  try {
+    const res = await fetch(`${API}/updatePassword`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const resetPassword = async ({ values, user_id }) => {
+  try {
+    const res = await fetch(`${API}/resetPassword/${user_id}`, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+    return await res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// export const sendOtp = async (user) => {
+//   try {
+//     const res = await fetch(`${API}/sendotp`, {
+//       method: "POST",
+//       headers: {
+//         Accept: "appliaction/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(user),
+//     });
+//     return await res.json();
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
 export const authenticate = (data, next) => {
   Cookies.set("token", JSON.stringify(data), { expires: 7 });
@@ -46,7 +111,6 @@ export const signout = (data, next) => {
 };
 
 export const isAuthenticated = () => {
-  // console.log(JSON.parse(name).user);
   try {
     const name = Cookies.get("token");
     return JSON.parse(name);

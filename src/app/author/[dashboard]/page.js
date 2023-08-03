@@ -61,7 +61,7 @@ function page() {
   const { push } = useRouter();
 
   const signinfirst = () => {
-    push("/signin");
+    push("/signin/#signin");
   };
 
   return (

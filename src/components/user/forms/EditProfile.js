@@ -6,7 +6,6 @@ import { updateLinks, updatePic } from "../../../helper/userapicalls";
 import Upload from "@/helper/Upload";
 
 function EditProfile({ user }) {
-  console.log(user);
   const [links, setLinks] = useState({
     twitter: (user.links || [])[0]?.twitter,
     github: (user.links || [])[0]?.github,

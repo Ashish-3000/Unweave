@@ -51,6 +51,11 @@ const Menu = () => {
           <Link href="/tags">
             <DropdownMenu.Item className="menu-button">Tags</DropdownMenu.Item>
           </Link>
+          <Link href="/signin/#signin">
+            <DropdownMenu.Item className="menu-button">
+              Sign In
+            </DropdownMenu.Item>
+          </Link>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
