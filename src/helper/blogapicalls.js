@@ -77,6 +77,17 @@ export const getSpecficBlog = async (id) => {
   }
 };
 
+export const getBlogforEdit = async (id) => {
+  try {
+    const response = await fetch(`${API}/getblog/edit/${id}`, {
+      method: "GET",
+    });
+    return await response.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const getLatestBlogs = async () => {
   try {
     const response = await fetch(`${API}/latestblogs`, {

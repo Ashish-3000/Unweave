@@ -10,7 +10,7 @@ import Exploring from "../../public/exploring.png";
 
 function Header({ logged }) {
   // const loggedIn = !isAuthenticated();
-  const [loggedIn, setLoggedIn] = useState(!isAuthenticated());
+  const [loggedIn, setLoggedIn] = useState(!isAuthenticated().user);
 
   return (
     <div className="side-margin flex items-center justify-between">

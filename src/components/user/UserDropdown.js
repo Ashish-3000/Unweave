@@ -15,7 +15,7 @@ function UserDropdown() {
   const onSignout = () => {
     if (typeof window !== "undefined") {
       Cookies.remove("token");
-      window.location.href = "/signin";
+      window.location.href = "/signin/#signin";
     }
   };
 

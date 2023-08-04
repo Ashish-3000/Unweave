@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { getAllTags } from "../../helper/tagapicalls";
+// import { getAllTags } from "../../helper/tagapicalls";
 import Image from "next/image";
 import Space from "../../../public/space.gif";
 
 export default async function page({}) {
+  const API = process.env.API;
   const tags = await fetch(
     `${API}/alltags`,
     {

@@ -68,7 +68,9 @@ function page() {
           {success && (
             <div>
               The password has been reset{" "}
-              <Link href="/signin/#signin">Sign in</Link>
+              <Link href="/signin/#signin" className="blue underline">
+                Sign in
+              </Link>
             </div>
           )}
           <h1 className="font-extrabold text-2xl">Lets Go</h1>
@@ -93,7 +95,7 @@ function page() {
               onSubmit(e);
             }}
           >
-            <div className="large-button-text">Enter the password</div>
+            <div className="large-button-text">Save my password</div>
           </button>
         </div>
       </div>

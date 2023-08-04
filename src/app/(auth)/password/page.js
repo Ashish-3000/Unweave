@@ -81,7 +81,7 @@ function page() {
               onSubmit(e);
             }}
           >
-            <div className="large-button-text">Enter the email</div>
+            <div className="large-button-text">Send reset link</div>
           </button>
         </div>
       </div>

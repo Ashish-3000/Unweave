@@ -18,7 +18,7 @@ const EditorBlock = ({ data, onChange, holder, readOnly }) => {
         data,
         minHeight: 0,
         readOnly: readOnly,
-        placeholder: "Let`s write an awesome story!",
+        placeholder: "Let`s write an awesome blog!",
         async onChange(api, event) {
           const data = await api.saver.save();
           onChange(data);
