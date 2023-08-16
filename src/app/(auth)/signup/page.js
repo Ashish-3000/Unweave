@@ -45,7 +45,7 @@ function page() {
   };
 
   const successMessage = () => {
-    window.location.href = "/login";
+    window.location.href = "/signin/#signin";
   };
 
   return (
