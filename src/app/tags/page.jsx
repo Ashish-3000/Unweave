@@ -5,15 +5,10 @@ import Space from "../../../public/space.gif";
 
 export default async function page({}) {
   const API = process.env.API;
-  const tags = await fetch(
-    `${API}/alltags`,
-    {
-      method: "GET",
-    },
-    {
-      cache: "no-store",
-    }
-  )
+  const tags = await fetch(`${API}/alltags`, {
+    method: "GET",
+    cache: "no-store",
+  })
     .then((data) => {
       return data.json();
     })

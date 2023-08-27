@@ -50,7 +50,6 @@ export const verify = async (user) => {
 };
 
 export const updatePassword = async (user) => {
-  console.log(user);
   try {
     const res = await fetch(`${API}/updatePassword`, {
       method: "PUT",

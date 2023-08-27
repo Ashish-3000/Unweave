@@ -27,6 +27,11 @@ function page() {
   function onSubmit(e) {
     e.preventDefault();
     setLoading(true);
+    setValues({
+      ...values,
+      ["success"]: "",
+      ["error"]: "",
+    });
     updatePassword(values)
       .then((data) => {
         if (data.error) {
@@ -42,7 +47,10 @@ function page() {
         }
       })
       .catch((err) => {
-        console.log("Try again");
+        setValues({
+          ...values,
+          ["error"]: "There might be some problem on our side",
+        });
       });
   }
 
@@ -53,11 +61,9 @@ function page() {
     >
       <div className="tablet-centered my-auto">
         <div className="content-grid home-hero">
-          {error && (
-            <div className="danger" role="alert">
-              Sorry email does not exist, Sign Up
-            </div>
-          )}
+          <div className="danger" role="alert">
+            {error}
+          </div>
           {success}
           <h1 className="font-extrabold text-2xl">Lets Go</h1>
           <div className="email-input mx-auto my-8">

@@ -80,7 +80,6 @@ export default function page({ params }) {
     const content = data;
     let tagList = [];
     selectedTags.map((tag) => {
-      console.log(tag);
       tagList.push(tag.id);
     });
 
@@ -254,7 +253,6 @@ export default function page({ params }) {
               </div>
               <div className="md:ml-28 mt-4 mb-4">
                 {selectedTags.map((tag, key) => {
-                  console.log(tag);
                   return (
                     <div
                       key={key}
