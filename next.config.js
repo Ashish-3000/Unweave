@@ -1,18 +1,5 @@
 // next.config.js
 
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-  options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
-    rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
-  },
-});
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Configure pageExtensions to include md and mdx
@@ -34,6 +21,9 @@ module.exports = {
     REACT_APP_APP_ID: process.env.REACT_APP_ID,
     REACT_APP_MEASUREMENT: process.env.REACT_APP_MEASUREMENT,
     REACT_APP_MAIL: process.env.REACT_APP_MAIL,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    MAIL_USERNAME: process.env.MAIL_USERNAME,
+    WEBSITE: process.env.WEBSITE,
   },
   images: {
     domains: ["firebasestorage.googleapis.com", "icons8.com"],
